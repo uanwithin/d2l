@@ -1,0 +1,32 @@
+[project]
+name = "d2l"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "pandas>=3.1.1",
+    "requests>=2.34.2",
+    "rise>=5.7.1",
+    "scipy>=1.18.1",
+    "torch>=2.11.0",
+    "torchaudio>=2.11.0",
+    "torchvision>=0.26.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-gpu"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-gpu" }
+torchvision = { index = "pytorch-gpu" }
+torchaudio = { index = "pytorch-gpu" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+]
